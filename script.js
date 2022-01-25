@@ -80,11 +80,156 @@ else if (compWins > playerWins)
 else
     console.log('tie game');
 
+}
+const roc = document.querySelector('.rock');
+const pape = document.querySelector('.paper');
+const sciss = document.querySelector('.scissors');
+const btn = document.getElementById('btn');
+const center = document.querySelector('.center');
+const container = document.createElement('container');
+center.appendChild(container);
+let counter1 = document.createElement('div');
+counter1.style = 'color:white';
+counter1.classList.add('counter1');
+let counter2 = document.createElement('div');
+counter2.classList.add('counter2');
+counter2.style = 'color:white';
+container.appendChild(counter2);
+container.appendChild(counter1);
+counter1.textContent = 'Player wins: ' + playerWins;
+counter2.textContent = 'Computer wins: ' + compWins;
 
 
+function keepScore() {
+
+    counter1.textContent = 'Player wins: ' + playerWins;
+
+    counter2.textContent = 'Computer wins: ' + compWins;
 
 }
 
+roc.addEventListener('click',() => {
+    playerSelection = 'rock';
+    compMove = '';
+    computerPlay();
+    winner = singleRound(playerSelection,compMove)
+    console.log(winner);
+    if (winner == 'player') {
+        playerWins = playerWins + 1;
+        if (playerWins === 5) {
+            alert('Player wins the game');
+            playerWins = 0;
+            compWins = 0;
+            
+        }}
+    else if (winner == 'computer')
+        {compWins = compWins + 1;
+        if (compWins === 5) {
+            alert('Computer wins the game');
+            playerWins = 0;
+            compWins = 0;
+
+        }}
+    console.log(playerWins);
+    keepScore();
+    // if (playerWins = 5) {
+    //     alert('player wins');
+    //     playerWins = 0;
+    //     compWins = 0;}
+    //     else if (compWins = 5){
+    //     alert('computer wins')
+    //     playerWins = 0;
+    //     compWins = 0;}
+});
+pape.addEventListener('click',() => {
+    playerSelection = 'paper';
+    compMove = '';
+    computerPlay();
+    winner = singleRound(playerSelection,compMove)
+    console.log(winner);
+    if (winner == 'player') {
+        playerWins = playerWins + 1;
+        if (playerWins === 5) {
+            alert('Player wins the game');
+            playerWins = 0;
+            compWins = 0;
+            
+        }}
+    else if (winner == 'computer')
+        {compWins = compWins + 1;
+        if (compWins === 5) {
+            alert('Computer wins the game');
+            playerWins = 0;
+            compWins = 0;
+
+        }}
+    console.log(playerWins);
+    keepScore();
+});
+sciss.addEventListener('click',() => {
+    playerSelection = 'scissors';
+    compMove = '';
+    computerPlay();
+    winner = singleRound(playerSelection,compMove)
+    console.log(winner);
+    if (winner == 'player') {
+        playerWins = playerWins + 1;
+        if (playerWins === 5) {
+            alert('Player wins the game');
+            playerWins = 0;
+            compWins = 0;
+            
+        }}
+    else if (winner == 'computer')
+        {compWins = compWins + 1;
+        if (compWins === 5) {
+            alert('Computer wins the game');
+            playerWins = 0;
+            compWins = 0;
+
+        }}
+    console.log(playerWins);
+    keepScore();
+});
+
+
+// pape.addEventListener('click',() => {
+//     //alert('hello world paper');
+//     playerSelection = 'paper';
+//     compMove = '';
+//     computerPlay();
+//     winner = singleRound(playerSelection,compMove)
+//     console.log(winner);
+//     if (winner == 'player') {
+//         playerWins = playerWins + 1;}
+//     else if (winner == 'computer')
+//         {compWins = compWins + 1;}
+//     console.log(playerWins);
+// });
+// sciss.addEventListener('click',() => {
+//     //alert('hello world scissors');
+//     playerSelection = 'scissors';
+//     compMove = '';
+//     computerPlay();
+//     winner = singleRound(playerSelection,compMove)
+//     console.log(winner);
+//     if (winner == 'player') {
+//         playerWins = playerWins + 1;}
+//     else if (winner == 'computer')
+//         {compWins = compWins + 1;}
+//     console.log(playerWins);
+// });
+
+// if (playerWins = 5) {
+//     alert('player wins')
+//     playerWins = 0;
+//     compWins = 0;}
+//     else if (compWins = 5){
+//     alert('computer wins')
+//     playerWins = 0;
+//     compWins = 0;}
+
+//btn.onclick = () => alert('hello world');
 
 //function updateScore(playerWins,compWins,i) {
 
@@ -95,4 +240,4 @@ else
 //}
 
 
-game();
+//game();
